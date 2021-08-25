@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="lQD-RQ-Lya">
-                                <rect key="frame" x="40" y="345" width="334" height="206"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lQD-RQ-Lya">
+                                <rect key="frame" x="40" y="328" width="334" height="240"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="Mpb-ut-Z3x">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="99"/>
@@ -38,29 +38,36 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-6q-XIv">
-                                        <rect key="frame" x="92" y="112" width="150" height="51"/>
+                                        <rect key="frame" x="92" y="129" width="150" height="51"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="Nq2-9O-WSS"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                         <state key="normal" title="Log In">
                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
                                         <connections>
+                                            <action selector="logInButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Xh-Pk-RKi"/>
                                             <segue destination="M62-bV-IY6" kind="presentation" modalPresentationStyle="fullScreen" id="WX8-Ly-4zL"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="78" translatesAutoresizingMaskIntoConstraints="NO" id="sXd-H5-FX8">
-                                        <rect key="frame" x="0.0" y="176" width="334" height="30"/>
+                                        <rect key="frame" x="0.0" y="210" width="334" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxR-ng-pi4">
                                                 <rect key="frame" x="0.0" y="0.0" width="133" height="30"/>
                                                 <state key="normal" title="Forgot User Name?"/>
+                                                <connections>
+                                                    <action selector="forgotUserName" destination="BYZ-38-t0r" eventType="touchUpInside" id="DGR-wG-PRC"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGm-ix-fHz">
                                                 <rect key="frame" x="211" y="0.0" width="123" height="30"/>
                                                 <state key="normal" title="Forgot Password?"/>
+                                                <connections>
+                                                    <action selector="forgotPassword" destination="BYZ-38-t0r" eventType="touchUpInside" id="dlf-vf-J9F"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -78,6 +85,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gPu-yf-s2G"/>
+                    <connections>
+                        <outlet property="logInButton" destination="hRM-6q-XIv" id="AQO-BS-ZtH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,11 +107,12 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ld5-cF-vAR" secondAttribute="height" multiplier="159:79" id="h8l-FL-LIn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="logOutButtonPressed" destination="M62-bV-IY6" eventType="touchUpInside" id="KpW-Kh-rBn"/>
                                     <segue destination="OxW-mu-FGf" kind="unwind" unwindAction="unwindFor:" id="jra-nT-dks"/>
                                 </connections>
                             </button>
@@ -134,6 +145,10 @@
                             <constraint firstItem="Vy2-dR-ARf" firstAttribute="bottom" secondItem="ld5-cF-vAR" secondAttribute="bottom" constant="154" id="nob-ow-EOS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logOutButton" destination="ld5-cF-vAR" id="1Uf-BQ-lAT"/>
+                        <outlet property="welcomeLabel" destination="qnR-OA-8uV" id="Dxl-AU-0Ys"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yiu-y8-Q1b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="OxW-mu-FGf" userLabel="Exit" sceneMemberID="exit"/>

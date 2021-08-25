@@ -9,12 +9,20 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var welcomeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        logOutButton.layer.cornerRadius = 15
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setGradientBackground()
+    }
+    
+    @IBAction func logOutButtonPressed() {
+        dismiss(animated: true)
     }
     
     private func setGradientBackground() {
@@ -28,4 +36,5 @@ class WelcomeViewController: UIViewController {
                 
         self.view.layer.insertSublayer(gradientLayer, at:0)
     }
+    
 }
