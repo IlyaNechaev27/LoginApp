@@ -12,17 +12,16 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var welcomeLabel: UILabel!
     
+    var welcome: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         logOutButton.layer.cornerRadius = 15
+        welcomeLabel.text = welcome     
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setGradientBackground()
-    }
-    
-    @IBAction func logOutButtonPressed() {
-        dismiss(animated: true)
     }
     
     private func setGradientBackground() {
